@@ -1,0 +1,157 @@
+/* import Barbatrick font for title */
+@font-face {
+    font-family: barbatrick;
+    src: url(/media/barbatrick.ttf);
+  }
+
+/* display tyres image as background */
+.container{
+    background-image: url(media/car-tyres-63928_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 1000px;
+}
+
+/* adds a background overlay */
+.background-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(99, 99, 99, 0.719);
+}
+
+.header {
+    min-height: 140px;
+    height: fit-content;
+    position: relative;
+    background-color: rgb(97, 160, 255);
+}
+
+.logo{
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.logo img{
+    text-align: center;
+    width: 200px;
+    position: relative;
+}
+
+/* customisation for title */
+.title{
+    font-family: barbatrick;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: rgb(77, 75, 75);
+    min-width: fit-content;
+    margin: 0;
+    position: relative;
+    transform: translateY(35%);    
+}
+
+* positions top navigation to the right of viewport */
+.topnav {
+  float: right;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /* background-color: blue; */
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  /* background-color: blue; */
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+#myTopnav {
+    float: right;
+  }
+
+@media screen and (max-width: 768px) {
+    .logo-container{
+        margin: auto;
+        width: auto;
+    }
+
+    .nav-container {
+        text-align: center;
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .topnav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #myTopnav{
+        float: right;
+        margin-top: 20px;
+    }
+
+    .topnav.responsive a:not(:last-child){
+        margin-right: 200px !important;
+        text-align: center;
+    }
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1000px) {
+    .topnav a {
+        display: none;
+    }
+
+    .topnav.responsive a:not(:last-child){
+        margin-right: 100px;
+        text-align: center;
+
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 1000px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
