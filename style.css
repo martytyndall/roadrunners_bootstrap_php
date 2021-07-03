@@ -1,9 +1,10 @@
 /* import Barbatrick font for title */
 @font-face {
-    font-family: barbatrick;
-    src: url(/media/barbatrick.ttf);
+  font-family: barbatrick;
+  src: url(/media/barbatrick.ttf);
 }
 
+/* styling for dividers */
 hr {
   margin: 1rem 0;
   color: white !important;
@@ -13,61 +14,86 @@ hr {
   height: 3px;
 }
 
+/* styling for 'back to top' button */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  outline: none; /* Remove outline */
+  background-color: darkblue;
+  border: 1px solid white;
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
 
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
 
 /* display tyres image as background */
 .container{
-    background-image: url(media/car-tyres-63928_1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: fit-content;
+  background-image: url(media/car-tyres-63928_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1750px;
 }
+
 
 /* adds a background overlay */
 .background-overlay{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(99, 99, 99, 0.719);
-    min-height: 1600px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(99, 99, 99, 0.719);
+  height: 2620px;
+  overflow: hidden;
 }
 
+/* header styling */
 .header {
-    min-height: 140px;
-    height: fit-content;
-    position: relative;
-    background-color: rgb(97, 160, 255);
+  padding-top: 10px;
+  min-height: 140px;
+  height: fit-content;
+  position: relative;
+  background-color: rgb(97, 160, 255);
 }
 
+/* logo styling */
 .logo{
-    float: left;
-    margin: 0 auto;
-    text-align: center;
-    text-decoration: none;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
 }
 
+/* logo image styling */
 .logo img{
-    text-align: center;
-    width: 200px;
-    position: relative;
+  text-align: center;
+  width: 200px;
+  position: relative;
 }
 
 /* customisation for title */
 .title{
-    font-family: barbatrick;
-    font-size: 24px;
-    letter-spacing: 5px;
-    color: rgb(77, 75, 75);
-    min-width: fit-content;
-    margin: 0;
-    position: relative;
-    transform: translateY(35%);    
+  font-family: barbatrick;
+  font-size: 24px;
+  letter-spacing: 5px;
+  color: rgb(77, 75, 75);
+  min-width: fit-content;
+  margin: 0;
+  position: relative;
+  transform: translateY(35%);    
 }
 
-* positions top navigation to the right of viewport */
+/* positions top navigation to the right of viewport */
 .topnav {
   float: right;
   overflow: hidden;
@@ -83,38 +109,35 @@ hr {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  /* background-color: blue; */
-  color: black;
+  background-color: blue;
 }
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  /* background-color: blue; */
-  color: white;
-}
 
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
 
+/* positions topnav to the right of header */
 #myTopnav {
-    float: right;
+  float: right;
 }
 
+/* styling for the slideshow banner */
 .banner{
-    width: 80%;
-    height: 100px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 80px;
-    z-index: 3;
-    position: relative;
-  }
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  z-index: 3;
+  position: relative;
+}
   
 /* Hide the images by default */
 .mySlides {
@@ -128,17 +151,20 @@ hr {
   animation-name: fade;
   animation-duration: 1.5s;
 }
-  
+ 
+/* fade function of slides for apple devices */
 @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* face function of slides */
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
 
+/* styling for main content */
 .content{
   margin-top: 30px;
   text-align: center;
@@ -146,11 +172,24 @@ hr {
   color: white;
 }
 
+/* tyre safety section child elements styling */
+.safety-container *{
+  text-align: center; /* aligns all items to the centre */
+  color: white; 
+}
+
+/* safety container styling */
+.safety-container{
+  margin-top: 30px;
+  position: relative;
+}
+
 /* map styling */
 .map-container{
   margin-top: 30px;
 }
 
+/* map container child elements styling */
 .map-container *{
   text-align: center;
   margin: 0 auto;
@@ -159,16 +198,20 @@ hr {
   width: 100% !important;
 }
 
+/* map styling */
 .map{
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
+/* footer child elements styling */
 .footer *{
   position: relative;
   color: white;
   text-align: center;
 }
+
+/* footer container styling */
 .footer{
   background-color: rgb(97, 160, 255);
   position: relative;
@@ -176,13 +219,126 @@ hr {
   padding-top: 20px;
 }
 
+/* add top margin to the copyright section in the footer */
 .copyright{
   margin-top: 30px;
 }
 
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: rgb(97, 160, 255);
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: darkblue;
+}
+
+/* Add a background color and some padding around the form */
+.contact-container {
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+/* contact container child elements styling */
+.contact-container *{
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  position: relative;
+}
+
+/* add top margin to the contact section title */
+.contact-title{
+  margin-bottom: 20px;
+}
+
+
+
 
 /* ************************************************ */
 /* media queries */
+@media screen and (max-width: 1400px){
+  .safety-container *{
+    width: 100% !important;
+  }
+
+  .videos{
+    width: 560px !important;
+  }
+
+  .background-overlay{
+    height: 2940px;
+  }
+  
+}
+
+@media screen and (max-width: 1200px){
+  .background-overlay{
+    height: 2955px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+    .topnav a {
+        display: none;
+    }
+
+    .topnav.responsive a:not(:last-child){
+        margin-right: 100px;
+        text-align: center;
+
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+    .banner{
+      margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+  .background-overlay{
+    height: 2912px;
+  }  
+}
+  
+@media screen and (max-width: 1000px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .logo-container{
         margin: auto;
@@ -217,41 +373,18 @@ hr {
     .aside{
       width: 100%;
     }
+
+    .videos{
+      width: 100% !important;
+    }
+
+    .background-overlay{
+      height: 3117px;
+    }  
 }
 
-/* When the screen is less than 1000 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 1000px) {
-    .topnav a {
-        display: none;
-    }
-
-    .topnav.responsive a:not(:last-child){
-        margin-right: 100px;
-        text-align: center;
-
-    }
-
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
-
-    .banner{
-      margin-bottom: 0px;
-    }
+@media screen and (max-width: 576px) {
+  .opening-times{
+    margin-top: 30px;
   }
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  @media screen and (max-width: 1000px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
+}

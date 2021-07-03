@@ -16,13 +16,12 @@
 
     <div class="container">
 
-
         <!-- container for background overlay -->
         <div class="background-overlay"></div>
 
 
         <!-- header -->
-        <div class="row header">
+        <div class="row header" id="home">
 
             <!-- logo and title containers -->
             <div class="col-sm-6 logo-container">
@@ -35,9 +34,9 @@
             <!-- nav container -->
             <div class="col-sm-6 nav-container">
                 <div class="topnav" id="myTopnav">
-                    <a href="#home">Home</a>
+                    <a href="#about-us">About Us</a>
                     <a href="#tyre-safety">Tyre Safety</a>
-                    <a href="#brands">Brands</a>
+                    <a href="#find-us">Find Us</a>
                     <a href="#contact">Contact</a>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
@@ -47,7 +46,7 @@
         </div>
 
 
-        <!--  -->
+        <!-- banner -->
         <div class="row banner-container">
             <div class="col-sm-offset-2 col-sm-12">
                 <div class="banner">
@@ -78,8 +77,8 @@
         <hr>
 
 
-        <!--  -->
-        <div class="row content">
+        <!-- main content -->
+        <div class="row content" id="about-us">
             <div class="main col-sm-8">
                 <main class="main">
                     <h1 class="about-us">About Us</h1>
@@ -104,12 +103,29 @@
             </div>
         </div>
 
+        <hr>
+
+        <div class="row safety-container" id="tyre-safety">
+            <h1 class="safety-title">Tyre Safety</h1>
+            <div class="col-sm-6">
+                <iframe class="videos" width="560" height="315" src="https://www.youtube.com/embed/XFvfnJT-m-g" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-sm-6">
+                <iframe class="videos" width="560" height="315" src="https://www.youtube.com/embed/9F-HmK6-s8M" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
 
         <hr>
 
 
-        <!--  -->
-        <div class="row map-container">
+        <!-- Google Maps integration -->
+        <div class="row map-container" id="find-us">
             <div class="col-sm-offset-1 col-sm-10">
                 <h1>Find Us</h1>
                 <div class="map" id="map">
@@ -128,8 +144,32 @@
 
         <hr>
 
+        <!-- contact form -->
+        <div class="row contact-container" id="contact">
+            <div class="col-sm-12">
+                <h1 class="contact-title">Contact Us</h1>
+                <form action="action_page.php">
 
-        <!--  -->
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                
+                    <label for="query">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Write your message here.." style="height:200px"></textarea>
+                
+                    <input type="submit" value="Submit">
+                
+                  </form>
+            </div>
+        </div>
+
+        <!-- return to top button -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+        <!-- footer -->
         <div class="row footer">
             <div class="col-sm-6 contact">
                 <h1>Contact</h1>
