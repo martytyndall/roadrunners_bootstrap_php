@@ -2,26 +2,37 @@
 @font-face {
     font-family: barbatrick;
     src: url(/media/barbatrick.ttf);
-  }
+}
+
+hr {
+  margin: 1rem 0;
+  color: white !important;
+  background-color: white !important;
+  border: 0;
+  opacity: .99;
+  height: 3px;
+}
+
+
 
 /* display tyres image as background */
 .container{
     background-image: url(media/car-tyres-63928_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 1000px;
+    height: fit-content;
 }
 
 /* adds a background overlay */
 .background-overlay{
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(99, 99, 99, 0.719);
+    min-height: 1600px;
 }
 
 .header {
@@ -93,8 +104,85 @@
 
 #myTopnav {
     float: right;
-  }
+}
 
+.banner{
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    z-index: 3;
+    position: relative;
+  }
+  
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+  
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.content{
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+/* map styling */
+.map-container{
+  margin-top: 30px;
+}
+
+.map-container *{
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  position: relative;
+  width: 100% !important;
+}
+
+.map{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.footer *{
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.footer{
+  background-color: rgb(97, 160, 255);
+  position: relative;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.copyright{
+  margin-top: 30px;
+}
+
+
+/* ************************************************ */
+/* media queries */
 @media screen and (max-width: 768px) {
     .logo-container{
         margin: auto;
@@ -121,9 +209,17 @@
         margin-right: 200px !important;
         text-align: center;
     }
+
+    .main{
+      width: 100%;
+    }
+
+    .aside{
+      width: 100%;
+    }
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+/* When the screen is less than 1000 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 1000px) {
     .topnav a {
         display: none;
@@ -138,6 +234,10 @@
     .topnav a.icon {
       float: right;
       display: block;
+    }
+
+    .banner{
+      margin-bottom: 0px;
     }
   }
   
