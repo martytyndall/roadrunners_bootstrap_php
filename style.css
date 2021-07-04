@@ -263,13 +263,21 @@ input[type=submit]:hover {
 .contact-container *{
   text-align: center;
   margin: 0 auto;
-  color: white;
   position: relative;
 }
 
-/* add top margin to the contact section title */
+.contact-container label{
+  color: white;
+}
+
+/* add bottom margin to the contact section title */
 .contact-title{
   margin-bottom: 20px;
+  color: white;
+}
+
+.error{
+  color: red;
 }
 
 

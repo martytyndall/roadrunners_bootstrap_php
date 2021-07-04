@@ -1,3 +1,52 @@
+<?php
+
+// define variables and set to empty values
+$fname = $lname = $email = $message = "";
+$fnameErr = $lnameErr = $emailErr = "";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty($_POST["fname"])) {
+        $fnameErr = "First name is required";
+    } else {
+        $fname = test_input($_POST['fname']);        
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+            $fnameErr = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["lname"])) {
+        $lname = test_input($_POST["lname"]);
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+            $lnameErr = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+
+    if (empty($_POST["message"])) {
+        $message = "";
+    } else {
+        $message = test_input($_POST["message"]);
+    }
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +60,6 @@
     <title>RoadRunners-24/7</title>
 </head>
 <body>
-
-    
 
     <div class="container">
 
@@ -148,22 +195,33 @@
         <div class="row contact-container" id="contact">
             <div class="col-sm-12">
                 <h1 class="contact-title">Contact Us</h1>
-                <form action="action_page.php">
-
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                
+                <!-- form action uses htmlspecialcharacters to convert special characters to html code to prevent cross site scripting 
+                     the $_SERVER["PHP_SELF"] is a super global variable to tell the form to send the script to this page -->
+                <form method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'>
+                    <span class="error">* required field</span>
+                    <br>
+                    <br>
+                    <label for="fname">First Name</label><span class="error"> * </span>
+                    <input type="text" id="fname" name="fname" placeholder="Your first name.." value="<?php echo $fname;?>">
+                    <span class="error"><?php echo $fnameErr;?></span>
+                    <br><br>
                     <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                
-                    <label for="query">Message</label>
-                    <textarea id="subject" name="subject" placeholder="Write your message here.." style="height:200px"></textarea>
+                    <input type="text" id="lname" name="lname" placeholder="Your last name.." value="<?php echo $lname;?>">
+                    <span class="error"><?php echo $lnameErr;?></span>
+                    <br><br>
+                    <label for="email">Email Address</label><span class="error"> * </span>
+                    <input type="text" id="email" name="email" placeholder="Your email address.." value="<?php echo $email;?>">
+                    <span class="error"><?php echo $emailErr;?></span>
+                    <br><br>
+                    <label for="message">Message</label><span class="error"> * </span>
+                    <textarea id="subject" name="message" placeholder="Write your message here.." style="height:200px"><?php echo $message;?></textarea>
                 
                     <input type="submit" value="Submit">
                 
                   </form>
             </div>
         </div>
+
 
         <!-- return to top button -->
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
@@ -188,14 +246,9 @@
             <div class="col-sm-12 copyright" >
                 <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Marty Tyndall. All Rights Reserved.</p>
             </div>
-        </div>
-
-        
+        </div>        
     </div>
 
-
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
 </body>
